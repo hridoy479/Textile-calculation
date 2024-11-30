@@ -22,10 +22,11 @@ function calculate() {
   const ag = average/6;
 
   
-  document.getElementById("A.g").textContent= ag;
+  
 
   document.getElementById("sum").textContent = sum;
   document.getElementById("average").textContent = average;
+  document.getElementById("A.g").textContent= ag;
 }
 
 function addInput() {
@@ -98,7 +99,7 @@ function calculateCV() {
     return;
   }
 
-  const numbers = input.split(",").map(Number);
+  const numbers = input.split("+").map(Number);
   
   if (numbers.some(isNaN)) {
     resultElement.textContent = "Please enter only numeric values.";
@@ -125,6 +126,6 @@ function countCalculate(){
   }
  
 
-  let grain= 68.8/input;
-  resultElement.textContent = `Count:${grain.toFixed(2)}`;
+  let grain= 64.8/input;
+  resultElement.textContent = `Count:${grain}`;
 }
