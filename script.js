@@ -22,10 +22,11 @@ function calculate() {
   const ag = average/6;
 
   
-  document.getElementById("A.g").textContent= ag;
+  
 
   document.getElementById("sum").textContent = sum;
   document.getElementById("average").textContent = average;
+  document.getElementById("A.g").textContent= ag;
 }
 
 function addInput() {
