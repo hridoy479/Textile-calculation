@@ -98,7 +98,7 @@ function calculateCV() {
     return;
   }
 
-  const numbers = input.split(",").map(Number);
+  const numbers = input.split("+").map(Number);
   
   if (numbers.some(isNaN)) {
     resultElement.textContent = "Please enter only numeric values.";
@@ -126,5 +126,5 @@ function countCalculate(){
  
 
   let grain= 64.8/input;
-  resultElement.textContent = `Count:${grain.toFixed(2)}`;
+  resultElement.textContent = `Count:${grain}`;
 }
