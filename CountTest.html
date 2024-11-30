@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sum and Average Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="calculator">
+    <header class="header">
+        <h1>Sum and Average Calculator</h1>
+        <button class="exit" id="exit" onclick="exit()">X</button>
+
+    </header>
+    <h1>Count Calculator</h1>
+    <p>Enter your data (comma-separated):</p>
+    <div id="inputs-container">
+        <input type="text" id="dataInput" placeholder="e.g., 10, 15, 20" class="number-input">
+        <button onclick="countCalculate()">Calculate</button>
+        
+    </div>
+    
+    <div class="results">
+        <p id="result"></p>
+        
+      </div>
+      <button onclick="CvTest()">CV%</button>
+ 
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sum and Average Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #141418; /* A solid color for the body background */
+      transition: background 0.1s ease-in-out; /* Smooth transition */
+    }
+
+    h1 {
+      color: #ffffff;
+      font-size: 22px;
+      text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.7);
+      margin-bottom: 15px;
+    }
+
+    .calculator {
+      position: relative;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 20px;
+      width: 90%; /* Adjust width for smaller screens */
+      max-width: 400px; /* Restrict max width for larger screens */
+      margin: 5vh auto; /* More compact margin for mobile */
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    button {
+      padding: 12px 100px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 20px;
+      background: linear-gradient(45deg, #ff6ec4, #7873f5);
+      color: #ffffff;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+      transition: all 0.3s ease-in-out;
+    }
+
+    button:hover {
+      background: linear-gradient(45deg, #7873f5, #4dd0e1);
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.6);
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <h1>Textile Calculation</h1>
+    <button onclick="location.href='DF_test.html'">D/F Test</button>
+    <div class="div1">
+      <button onclick="location.href='CD_test.html'">C/D Test</button>
+    </div>
+    <div class="div1">
+      <button onclick="location.href='SF_test.html'">S/F Test</button>
+    </div>
+    <div class="div1">
+      <button onclick="countTest()">Count Test</button>
+    </div>
+    <div class="div1">
+      <button onclick="CvTest()">CV%</button>
+    </div>
+  </div>
+<script src="script.js"></script>
+  <script>
+    let mouseX = 0;
+    let mouseY = 0;
+
+    // Update mouse position on mousemove
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    // Update touch position on touchmove
+    document.addEventListener('touchmove', (e) => {
+      mouseX = e.touches[0].clientX;
+      mouseY = e.touches[0].clientY;
+    });
+
+    // Smoothly update the background
+    function updateBackground() {
+      const x = mouseX / window.innerWidth; // Normalize X position
+      const y = mouseY / window.innerHeight; // Normalize Y position
+
+      // Update background with a smooth radial gradient
+      document.body.style.background = `
+        radial-gradient(circle at ${x * 100}% ${y * 100}%, #3a3d5f, #141418)
+      `;
+
+      // Request the next frame for continuous updates
+      requestAnimationFrame(updateBackground);
+    }
+
+    // Start updating the background
+    updateBackground();
+  </script>
+</body>
+</html>
