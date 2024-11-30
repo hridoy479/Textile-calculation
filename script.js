@@ -125,6 +125,6 @@ function countCalculate(){
   }
  
 
-  let grain= 68.8/input;
+  let grain= 64.8/input;
   resultElement.textContent = `Count:${grain.toFixed(2)}`;
 }
