@@ -98,9 +98,11 @@ function calculateCV() {
     resultElement.textContent = "Please enter valid data.";
     return;
   }
-
-  const numbers = input.split("+").map(Number);
   
+  const numbers = input.split("+").map(Number);
+
+
+
   if (numbers.some(isNaN)) {
     resultElement.textContent = "Please enter only numeric values.";
     return;
@@ -113,7 +115,7 @@ function calculateCV() {
   );
 
   const cvPercent = (stdDev / mean) * 100;
-
+  document.getElementById("avg").innerText=`Avg:${mean.toFixed(2)}`;
   resultElement.textContent = `CV%: ${cvPercent.toFixed(2)}%`;
 }
 function countCalculate(){
