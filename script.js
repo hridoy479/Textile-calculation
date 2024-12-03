@@ -88,6 +88,9 @@ function countTest(){
 function CvTest(){
   location.href ="Cv.html";
 }
+function IdleTest() {
+  location.href="idle_counter.html"
+}
 
 //calculate the cv
 function calculateCV() {

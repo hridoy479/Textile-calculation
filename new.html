@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Counter with Dark Mode</title>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- React and ReactDOM CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+  <!-- Babel CDN for JSX -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- JavaScript -->
+  <script type="text/babel">
+    function CounterWithDarkMode() {
+      const [count, setCount] = React.useState(0);
+      const [darkMode, setDarkMode] = React.useState(false);
+
+      // Toggle Dark Mode
+      const toggleDarkMode = () => setDarkMode(!darkMode);
+
+      // Handlers for increment, decrement, and reset
+      const increment = () => setCount(count + 1);
+      const decrement = () => setCount(count > 0 ? count - 1 : 0);
+      const reset = () => setCount(0);
+
+      // Styles for light and dark modes
+      const containerStyle = {
+        backgroundColor: darkMode ? "#121212" : "#f4f4f9",
+        color: darkMode ? "#ffffff" : "#333",
+        textAlign: "center",
+        minHeight: "100vh",
+        padding: "50px",
+        transition: "background-color 0.3s, color 0.3s",
+      };
+
+      const buttonStyle = {
+        padding: "10px 20px",
+        fontSize: "16px",
+        margin: "5px",
+        cursor: "pointer",
+        backgroundColor: darkMode ? "#333" : "#007BFF",
+        color: darkMode ? "#ffffff" : "#ffffff",
+        border: "none",
+        borderRadius: "5px",
+      };
+
+      return (
+        <div style={containerStyle}>
+          <h1>React Counter with Dark Mode</h1>
+          <h2>{count}</h2>
+          <div>
+            <button onClick={increment} style={buttonStyle}>+</button>
+            <button onClick={decrement} style={buttonStyle}>-</button>
+            <button onClick={reset} style={buttonStyle}>Reset</button>
+          </div>
+          <div style={{ marginTop: "20px" }}>
+            <button onClick={toggleDarkMode} style={buttonStyle}>
+              Toggle {darkMode ? "Light" : "Dark"} Mode
+            </button>
+          </div>
+        </div>
+      );
+    }
+
+    // Render the Counter Component
+    const rootElement = document.getElementById("root");
+    ReactDOM.createRoot(rootElement).render(<CounterWithDarkMode />);
+  </script>
+</body>
+</html>
