@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Counter</title>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- React and ReactDOM CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+  <!-- Babel CDN for JSX -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- JavaScript -->
+  <script type="text/babel">
+    // Counter Component
+    function Counter() {
+      const [count, setCount] = React.useState(0);
+      const [newcount,nsetCount]=React.useState(0);
+
+      // Handlers for increment, decrement, and reset
+      const increment = () => setCount(count + 1);
+      const decrement = () => setCount(count > 0 ? count - 1 : 0);
+      const reset = () => setCount(0);
+
+      const incr = ()=>nsetCount(newcount+1);
+      const dec = ()=>nsetCount(newcount>0 ? newcount-1 :0);
+
+      
+      return (
+        <div style={{ textAlign: "center", marginTop: "50px" }}>
+            <h1>Idle test</h1>
+          <h1>Mechanical Idle</h1>
+
+          <h2>{count}</h2>
+          <div>
+            <button onClick={increment} style={buttonStyle}>+</button>
+            <button onClick={decrement} style={buttonStyle}>-</button>
+          </div>
+          <h1>Production Idle</h1>
+
+          <h2>{newcount}</h2>
+          <button onClick={incr} style={buttonStyle}>+</button>
+          <button onClick={dec} style={buttonStyle}>-</button>
+
+        </div>
+      );
+    }
+
+    // Button styling
+    const buttonStyle = {
+      padding: "10px 20px",
+      fontSize: "16px",
+      margin: "5px",
+      cursor: "pointer",
+      backgroundColor: "#007BFF",
+      color: "white",
+      border: "none",
+      borderRadius: "5px",
+    };
+
+    // Render the Counter Component
+    const rootElement = document.getElementById("root");
+    ReactDOM.createRoot(rootElement).render(<Counter />);
+  </script>
+</body>
+</html>
